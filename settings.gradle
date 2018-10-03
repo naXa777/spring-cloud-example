@@ -1,3 +1,5 @@
 rootProject.name = 'spring-cloud-example'
 
 include 'discovery-server'
+include 'weather-service'
+include 'client'
