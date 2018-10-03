@@ -1,5 +1,7 @@
 # Spring Cloud Example
 
+[![Статус сборки](https://travis-ci.com/naXa777/spring-cloud-example.svg?branch=master&style=flat)](https://travis-ci.com/naXa777/spring-cloud-example)
+
 Эта открытая площадка предназначена для изучения [Spring Cloud](http://spring-projects.ru/projects/spring-cloud/) и [Kotlin](https://kotlinlang.ru/) на примерах.
 
 _Читать на других языках: [In English](README.en.md)_
@@ -86,7 +88,8 @@ _Читать на других языках: [In English](README.en.md)_
 
 ## Непрерывная интеграция
 
-[Travis CI](https://travis-ci.com/)
+| [Travis CI](https://travis-ci.com/) | [![Статус сборки](https://travis-ci.com/naXa777/spring-cloud-example.svg?branch=master&style=flat)](https://travis-ci.com/naXa777/spring-cloud-example) |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## Лицензия
 

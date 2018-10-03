@@ -1,5 +1,7 @@
 # Spring Cloud Example
 
+[![Build Status](https://travis-ci.com/naXa777/spring-cloud-example.svg?branch=master&style=flat)](https://travis-ci.com/naXa777/spring-cloud-example)
+
 This playground is for learning [Spring Cloud](https://cloud.spring.io/) and [Kotlin](https://kotlinlang.org/) via examples.
 
 _Read this in other languages: [На русском](README.md)_
@@ -86,7 +88,8 @@ Tip: make sure that you run them on different ports and these ports are free, ot
 
 ## Continuous Integration
 
-[Travis CI](https://travis-ci.com/)
+| [Travis CI](https://travis-ci.com/) | [![Build Status](https://travis-ci.com/naXa777/spring-cloud-example.svg?branch=master&style=flat)](https://travis-ci.com/naXa777/spring-cloud-example) |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 ## License
 
