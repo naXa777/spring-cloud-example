@@ -1,0 +1,65 @@
+
+buildscript {
+	ext {
+		kotlinVersion = '1.2.71'
+		springBootVersion = '2.0.5.RELEASE'
+		springCloudVersion = 'Finchley.SR1'
+	}
+
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+	}
+}
+
+allprojects {
+	group = 'by.naxa.learning'
+	version = '1.0-SNAPSHOT'
+
+	apply plugin: 'idea'
+	apply plugin: 'eclipse'
+
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+}
+
+subprojects {
+
+	apply plugin: 'kotlin'
+	apply plugin: 'kotlin-spring'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	sourceCompatibility = 1.8
+	compileKotlin {
+		kotlinOptions {
+			freeCompilerArgs = ["-Xjsr305=strict"]
+			jvmTarget = "1.8"
+		}
+	}
+	compileTestKotlin {
+		kotlinOptions {
+			freeCompilerArgs = ["-Xjsr305=strict"]
+			jvmTarget = "1.8"
+		}
+	}
+
+	dependencies {
+		implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+		implementation("org.jetbrains.kotlin:kotlin-reflect")
+	}
+
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
+}
