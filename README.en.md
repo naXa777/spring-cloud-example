@@ -12,6 +12,14 @@ _Read this in other languages: [На русском](README.md)_
 
 ## Description
 
+> [Cloud-native](https://pivotal.io/de/cloud-native) is an approach to building and running applications that exploits the advantages of the cloud computing model.
+
+> [Microservices](https://pivotal.io/microservices) is an architectural approach to developing an application as a collection of small services; each service implements business capabilities, runs in its own process and communicates via an HTTP API. Each microservice can be deployed, upgraded, scaled, and restarted independent of other services in the application, typically as part of an automated system.
+
+[(c) Pivotal](https://pivotal.io/de/cloud-native)
+
+We're breaking large applications into smaller pieces called 'services'. And each of these services can be deployed and scaled on their own. _How does one service locate another?_
+
 ### Service Discovery
 
 |      Module      |
@@ -30,7 +38,23 @@ For the sake of simplicity, there's a single instance of Eureka server. Therefor
 You may want to have multiple discovery servers for high availability in production, so change the following properties:
 
     eureka.client.register-with-eureka=true
-    eureka.client.fetch-registry=true    
+    eureka.client.fetch-registry=true
+
+#### High Availability
+
+Eureka is constantly ensuring that application services that it's returning or handing back to clients are healthy and available. And it's also ensuring that in case if Discovery Server goes does all client still continue operate.
+
+Eureka was built with high availability in mind:
+
+ * The registry is distributed (cached locally on every client).
+ * Clients _can_ operate without discovery server (if this server goes down).
+ * Clients fetch deltas to update registry.
+
+#### Dashboard
+
+A web based Eureka dashboard is enabled by default. It shows useful information such as services metadata.
+ 
+In local environment it's available at http://localhost:8761
 
 ### Weather Service
 
