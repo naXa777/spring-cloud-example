@@ -4,7 +4,9 @@
 
 Эта открытая площадка предназначена для изучения [Spring Cloud](http://spring-projects.ru/projects/spring-cloud/) и [Kotlin](https://kotlinlang.ru/) на примерах.
 
-_Читать на других языках: [In English](README.en.md)_
+Читать на других языках: 
+* [In English](readme-translations/README.en.md)
+* [In het Nederlands](readme-translations/README.nl.md)
 
 ## Вклад
 
