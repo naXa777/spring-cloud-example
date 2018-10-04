@@ -159,7 +159,12 @@ Turbine (проект Spring Cloud Netflix) собирает потоки (strea
 
     ./gradlew :discovery-server:bootRun
     ./gradlew :weather-service:bootRun
+    ./gradlew :weather-app:bootRun
     ./gradlew :client:bootRun
+    ./gradlew :datetime-service:bootRun
+    ./gradlew :datetime-app:bootRun
+    ./gradlew :turbine:bootRun
+    ./gradlew :hystrix-dashboard:bootRun
 
 ### Используя IntelliJ IDEA
 
@@ -168,7 +173,12 @@ Turbine (проект Spring Cloud Netflix) собирает потоки (strea
 3. После импорта и синхронизации у вас должны были появиться несколько конфигураций, по одной для каждого модуля. Запускайте их по-порядку:
     1. DiscoveryServerApplication
     2. WeatherServiceApplication
-    3. ClientApplication
+    3. WeatherAppApplication
+    4. ClientApplication
+    5. DatetimeServiceApplication
+    6. DatetimeAppApplication
+    7. TurbineApplication
+    8. HystrixDashboardApplication
     
 Подсказка: убедитесь, что запускаете их на разных портах и что эти порты не заняты другими приложениями, во избежание конфликта.
 

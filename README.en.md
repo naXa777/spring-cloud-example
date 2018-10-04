@@ -160,7 +160,12 @@ You have a freedom of choosing build tools for this project: [Gradle](https://gr
 
     ./gradlew :discovery-server:bootRun
     ./gradlew :weather-service:bootRun
+    ./gradlew :weather-app:bootRun
     ./gradlew :client:bootRun
+    ./gradlew :datetime-service:bootRun
+    ./gradlew :datetime-app:bootRun
+    ./gradlew :turbine:bootRun
+    ./gradlew :hystrix-dashboard:bootRun
 
 ### Using IntelliJ IDEA
 
@@ -169,7 +174,12 @@ You have a freedom of choosing build tools for this project: [Gradle](https://gr
 3. Now you should have multiple run configurations for every module. Run them one-by-one:
     1. DiscoveryServerApplication
     2. WeatherServiceApplication
-    3. ClientApplication
+    3. WeatherAppApplication
+    4. ClientApplication
+    5. DatetimeServiceApplication
+    6. DatetimeAppApplication
+    7. TurbineApplication
+    8. HystrixDashboardApplication
 
 Tip: make sure that you run them on different ports and these ports are free, otherwise you'll get an error.
 
