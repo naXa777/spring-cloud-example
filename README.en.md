@@ -42,7 +42,7 @@ You may want to have multiple discovery servers for high availability in product
 
 #### High Availability
 
-Eureka is constantly ensuring that application services that it's returning or handing back to clients are healthy and available. And it's also ensuring that in case if Discovery Server goes does all client still continue operate.
+Eureka is constantly ensuring that application services that it's returning or handing back to clients are healthy and available. And it's also ensuring that in case if Discovery Server goes down all clients still continue to operate.
 
 Eureka was built with high availability in mind:
 
@@ -154,7 +154,7 @@ Before the first build you need to take additional steps.
    - &#x1F4D7; _TODO_
 
 You have a freedom of choosing build tools for this project: [Gradle](https://gradle.org/) or your favourite IDE.
-[IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/), [STS](https://stackoverflow.com/q/34214685/1429387) / [Eclipse](http://www.vogella.com/tutorials/EclipseGradle/article.html), or [NetBeans](https://netbeans.org/features/java/build-tools.html) should handle this task without any problems. 
+[IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/), [STS](https://stackoverflow.com/q/34214685/1429387) / [Eclipse](http://www.vogella.com/tutorials/EclipseGradle/article.html), or [NetBeans](https://netbeans.org/features/java/build-tools.html) should handle this task smoothly.
 
 ### Using Gradle Wrapper
 
