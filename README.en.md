@@ -22,9 +22,9 @@ We're breaking large applications into smaller pieces called 'services'. And eac
 
 ### Service Discovery
 
-|      Module      |
-| :--------------: |
-| discovery-server |
+|      Module      |           URL             |
+| :--------------: | :-----------------------: |
+| discovery-server | `http://host:8761/eureka` |
 
 There're multiple ways you can discover services in Spring Cloud:
 
@@ -58,17 +58,37 @@ In local environment it's available at http://localhost:8761
 
 ### Weather Service
 
-| Module          |
-| :-------------: |
-| weather-service |
+| Module          | URL                        |
+| :-------------: | :------------------------: |
+| weather-service | `http://host:port/weather` |
 
 The `@EnableDiscoveryClient` annotation is used to turn `WeatherServiceApplication` into a client of the Discovery Server and it causes it to register with the Discovery Server when it starts up.
 
+### Weather App
+
+| Module      | URL                                |
+| :---------: | :--------------------------------: |
+| weather-app | `http://host:port/current/weather` |
+
+### Datetime Service
+
+| Module           | URL                         |
+| :--------------: | :-------------------------: |
+| datetime-service | `http://host:port/datetime` |
+
+The `@EnableDiscoveryClient` annotation is used to turn `DatetimeServiceApplication` into a client of the Discovery Server and it causes it to register with the Discovery Server when it starts up.
+
+### Datetime App
+
+| Module       | URL                                 |
+| :----------: | :---------------------------------: |
+| datetime-app | `http://host:port/current/datetime` |
+
 ### Client
 
-| Module  |
-| :-----: |
-| client  |
+| Module  | URL                |
+| :-----: | :----------------: |
+| client  | `http://host:port` |
 
 The `@EnableDiscoveryClient` annotation is used to turn `ClientApplication` into a client of the Discovery Server.
 
@@ -76,6 +96,53 @@ The Client does not need to register with Eureka because it does not want anybod
 
     eureka.client.register-with-eureka=false
     
+### Fault Tolerance
+
+In a Distributed System one thing is absolutely certain... FAILURE IS INEVITABLE.
+
+A particularly bad effect of failures in a distributed system is a [cascading failure](https://en.wikipedia.org/wiki/Cascading_failure). From Wikipedia:
+
+> It is a process in a system of interconnected parts in which the failure of one or few parts can trigger the failure of other parts and so on.
+
+How to embrace failure?
+
+ * Fault tolerance
+ * Graceful degradation
+ * Constrain resources
+
+> [Circuit breaker design pattern](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) is a design pattern used in modern software development. It is used to detect failures and encapsulates the logic of preventing a failure from constantly recurring
+
+(From Wikipedia)
+
+#### Hystrix
+
+[Netflix Hystrix](https://github.com/Netflix/Hystrix) is a latency and **fault tolerance** library designed to isolate points of access to remote systems, services and 3rd party libraries, **stop cascading failure** and enable resilience in complex distributed systems where failure is inevitable.
+
+See [How it works](https://github.com/Netflix/Hystrix/wiki/How-it-Works).
+
+#### Hystrix Dashboard
+
+| Module             | URL                        |
+| :----------------: | :------------------------: |
+| hystrix-dashboard  | `http://host:port/hystrix` |
+
+Documentation: [Circuit Breaker: Hystrix Dashboard](https://cloud.spring.io/spring-cloud-static/Edgware.SR4/multi/multi__circuit_breaker_hystrix_dashboard.html)
+
+#### Turbine
+
+| Module   | URL                               |
+| :------: | :-------------------------------: |
+| turbine  | `http://host:3000/turbine.stream` |
+
+Hystrix dashboard can only monitor one microservice at a time. If there are many microservices, then the Hystrix dashboard pointing to the service has to be changed every time when switching the microservices to the monitor. It is tedious.
+
+Turbine (provided by the Spring Cloud Netflix project), aggregates multiple instances Hystrix metrics streams, so the dashboard can display an aggregate view.
+
+Config example:
+
+    turbine.app-config=weather-app,datetime-app
+    turbine.cluster-name-expression='default'
+
 ## Building and Running Locally
 
 ### Prepare

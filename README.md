@@ -23,9 +23,9 @@ _Как сервисы находят друг друга?_
 
 ### Service Discovery
 
-| Модуль           |
-| :--------------: |
-| discovery-server |
+|      Модуль      |          URL              |
+| :--------------: | :-----------------------: |
+| discovery-server | `http://host:8761/eureka` |
 
 В Spring Cloud есть несколько способов обнаружения сервисов:
 
@@ -59,17 +59,37 @@ Eureka была разработана с учётом высокой досту
 
 ### Weather Service
 
-| Модуль          |
-| :-------------: |
-| weather-service |
+| Модуль          | URL                        |
+| :-------------: | :------------------------: |
+| weather-service | `http://host:port/weather` |
 
 Аннотация `@EnableDiscoveryClient` используется, чтобы превратить приложение `WeatherServiceApplication` в клиента Discovery Server и заставить его зарегистрироваться в Discovery Server во время запуска.
 
+### Weather App
+
+| Модуль      | URL                                |
+| :---------: | :--------------------------------: |
+| weather-app | `http://host:port/current/weather` |
+
+### Datetime Service
+
+| Модуль           | URL                         |
+| :--------------: | :-------------------------: |
+| datetime-service | `http://host:port/datetime` |
+
+Аннотация `@EnableDiscoveryClient` используется, чтобы превратить приложение `DatetimeServiceApplication` в клиента Discovery Server и заставить его зарегистрироваться в Discovery Server во время запуска.
+
+### Datetime App
+
+| Модуль       | URL                                 |
+| :----------: | :---------------------------------: |
+| datetime-app | `http://host:port/current/datetime` |
+
 ### Client
 
-| Модуль  |
-| :-----: |
-| client  |
+| Модуль  | URL                |
+| :-----: | :----------------: |
+| client  | `http://host:port` |
 
 Аннотация `@EnableDiscoveryClient` используется, чтобы превратить приложение `ClientApplication` в клиента Discovery Server.
 
@@ -77,6 +97,51 @@ Eureka была разработана с учётом высокой досту
 
     eureka.client.register-with-eureka=false
     
+### Отказоустойчивость
+
+В распределённой системы можно быть абсолютно уверенным насчёт одного... ОТКАЗ НЕИБЕЖЕН.
+
+В частности негативным последствием отказов в распределённой системе является каскадный отказ (cascading failure) - неисправность, вызывающая выход из строя других элементов или систем.
+
+Как правильно обработать отказ?
+
+ * Проектирование под отказ.  
+    > Любое обращение к сервису может не сработать из-за его недоступности. Клиент должен реагировать на это настолько терпимо, насколько возможно.
+ * Изящная деградация (graceful degradation)
+    > Принцип сохранения работоспособности при потере части функциональности.
+ * Ограничение ресурсов
+
+Шаблон "Автоматический выключатель" ([Circuit breaker design pattern](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern)) - шаблон проектирования, применяемый в разработке современного ПО. Используется для обнаружения отказов и инкапсулирует логику предотвращения повторного возникновения отказа.
+
+#### Hystrix
+
+[Netflix Hystrix](https://github.com/Netflix/Hystrix) - ...
+
+См. [Как это работает?](https://github.com/Netflix/Hystrix/wiki/How-it-Works)
+
+#### Приборная панель Hystrix
+
+| Модуль             | URL                        |
+| :----------------: | :------------------------: |
+| hystrix-dashboard  | `http://host:port/hystrix` |
+
+Документация: [Circuit Breaker: Hystrix Dashboard](https://cloud.spring.io/spring-cloud-static/Edgware.SR4/multi/multi__circuit_breaker_hystrix_dashboard.html)<sup>(на англ.)</sup>
+
+#### Turbine
+
+| Module   | URL                               |
+| :------: | :-------------------------------: |
+| turbine  | `http://host:3000/turbine.stream` |
+
+Приборная панель Hystrix позволяет отслеживать только один микросервис. Если у вас много микросервисов, приходится переключаться между ними в панели, вручную меняя эндпойнт для сбора метрики. Это довольно утомительное занятие.
+
+Turbine (проект Spring Cloud Netflix) собирает потоки (streams) с метриками из нескольких экземпляров Hystrix и преобразовывает их в единый поток таким образом, чтобы в приборной панели Hystrix был доступен аггрегированный вид.
+
+Пример конфигурации:
+
+    turbine.app-config=weather-app,datetime-app
+    turbine.cluster-name-expression='default'
+
 ## Собираем и запускаем локально
 
 ### Подготовка
