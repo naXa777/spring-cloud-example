@@ -5,7 +5,7 @@
 This playground is for learning [Spring Cloud](https://cloud.spring.io/) and [Kotlin](https://kotlinlang.org/) via examples.
 
 Read this in other languages: 
-* [На русском](///README.md)
+* [На русском](../README.md)
 * [In het Nederlands](README.nl.md)
 
 ## Contribution
