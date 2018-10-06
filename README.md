@@ -4,7 +4,9 @@
 
 Эта открытая площадка предназначена для изучения [Spring Cloud](http://spring-projects.ru/projects/spring-cloud/) и [Kotlin](https://kotlinlang.ru/) на примерах.
 
-_Читать на других языках: [In English](README.en.md)_
+Читать на других языках: 
+* [In English](readme-translations/README.en.md)
+* [In het Nederlands](readme-translations/README.nl.md)
 
 ## Вклад
 
@@ -148,9 +150,9 @@ Turbine (проект Spring Cloud Netflix) собирает потоки (strea
 
 Перед первой сборкой приложения необходимо предпринять несколько дополнительных шагов.
 
- - Первое: клонировать репозиторий.
- - Второе: определить несколько переменных окружения.
-   - &#x1F4D7; _TODO_
+ 1. клонировать репозиторий.
+ 2. определить несколько переменных окружения.
+ 3. &#x1F4D7; _TODO_
 
 Вы обладаете свободой выбора средства для сборки этого проекта: [Gradle](https://gradle.org/) или любимая среда разработки.
 [IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/), [STS](https://stackoverflow.com/q/34214685/1429387) / [Eclipse](http://www.vogella.com/tutorials/EclipseGradle/article.html), или [NetBeans](https://netbeans.org/features/java/build-tools.html) должны справиться с этой задачей без проблем.

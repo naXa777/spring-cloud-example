@@ -4,7 +4,9 @@
 
 This playground is for learning [Spring Cloud](https://cloud.spring.io/) and [Kotlin](https://kotlinlang.org/) via examples.
 
-_Read this in other languages: [На русском](README.md)_
+Read this in other languages: 
+* [На русском](../README.md)
+* [In het Nederlands](README.nl.md)
 
 ## Contribution
 
@@ -149,9 +151,9 @@ Config example:
 
 Before the first build you need to take additional steps.
 
- - First, clone the repository.
- - Second, define some environment variables.
-   - &#x1F4D7; _TODO_
+ 1. Clone the repository.
+ 2. Define some environment variables.
+ 3. &#x1F4D7; _TODO_
 
 You have a freedom of choosing build tools for this project: [Gradle](https://gradle.org/) or your favourite IDE.
 [IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/), [STS](https://stackoverflow.com/q/34214685/1429387) / [Eclipse](http://www.vogella.com/tutorials/EclipseGradle/article.html), or [NetBeans](https://netbeans.org/features/java/build-tools.html) should handle this task smoothly.
