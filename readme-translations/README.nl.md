@@ -1,6 +1,6 @@
 # Spring Cloud Voorbeeld
 
-[![Статус сборки](https://travis-ci.com/naXa777/spring-cloud-example.svg?branch=master&style=flat)](https://travis-ci.com/naXa777/spring-cloud-example)
+[![Build status](https://travis-ci.com/naXa777/spring-cloud-example.svg?branch=master&style=flat)](https://travis-ci.com/naXa777/spring-cloud-example)
 
 Deze speeltuin dient om [Spring Cloud](http://spring-projects.ru/projects/spring-cloud/) и [Kotlin](https://kotlinlang.ru/) te leren via voorbeelden.
 
@@ -16,7 +16,7 @@ Lees dit in andere talen:
 
 > [Cloud-native](https://pivotal.io/de/cloud-native) is een aanpak om applicaties te builden en te runnen die de voordelen van het cloud computing model benut.
 
-> [Microservices](https://pivotal.io/microservices) is een aanpak op basis van architectuur om een applicatie te ontwikkelen als een verzameling van kleine services. Elke service implementeerd business  each service implements business mogelijkheden, loopt in zijn eigen proces en communiceert via een HTTP API. Elke microservice kan worden gedployed, geüpgraded, geschaald en herstart onafhankelijk van andere services in de applicatie. Dit door een geautomatiseerd systeem.
+> [Microservices](https://pivotal.io/microservices) is een aanpak op basis van architectuur om een applicatie te ontwikkelen als een verzameling van kleine services. Elke service implementeert business mogelijkheden, loopt in zijn eigen proces en communiceert via een HTTP API. Elke microservice kan worden gedployed, geüpgraded, geschaald en herstart onafhankelijk van andere services in de applicatie. Dit door een geautomatiseerd systeem.
 
 [(c) Pivotal](https://pivotal.io/de/cloud-native)
 
@@ -49,7 +49,7 @@ Je zou best meerdere ondekkingsservers maken voor een hogere beschikbaarheid in 
 
 Eureka is constantly ensuring that application services that it's returning or handing back to clients are healthy and available.
 
-Eureka was gebouwd met hoge toegangkelijkheid als mindset:
+Eureka was gebouwd met hoge toegankelijkheid als mindset:
 
  * Het register is verdeeld (lokaal gecached op elke client).
  * Clients _kunnen_ werken zonder discovery server (als de server uitvalt).
