@@ -7,6 +7,7 @@ Deze speeltuin dient om [Spring Cloud](http://spring-projects.ru/projects/spring
 Lees dit in andere talen: 
 * [На русском](../README.md)
 * [In English](README.en.md)
+* [Bahasa Indonesia](README.id.md)
 
 ## Bijdrage leveren
 

@@ -6,6 +6,7 @@ This playground is for learning [Spring Cloud](https://cloud.spring.io/) and [Ko
 
 Read this in other languages: 
 * [На русском](../README.md)
+* [Bahasa Indonesia](README.id.md)
 * [In het Nederlands](README.nl.md)
 
 ## Contribution
