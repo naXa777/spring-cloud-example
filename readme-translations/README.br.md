@@ -8,6 +8,7 @@ Leia em outros idiomas:
 * [На русском](../README.md) - Russo
 * [Bahasa Indonesia](README.id.md) - Indonésio
 * [In het Nederlands](README.nl.md) - Holândes
+* [In English](README.en.md) - Inglês
 
 ## Contribuição
 
