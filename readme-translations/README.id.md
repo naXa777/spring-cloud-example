@@ -8,6 +8,7 @@ Baca ini dalam bahasa lain:
 * [На русском](../README.md)
 * [In English](README.en.md)
 * [In het Nederlands](README.nl.md)
+* [Em Português](README.br.md)
 
 ## Kontribusi
 
