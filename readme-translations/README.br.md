@@ -62,7 +62,7 @@ Em ambiente local, o painel de controle está disponível no caminho http://loca
 
 ### Serviço de Clima
 
-| Module          | URL                        |
+| Módulo          | URL                        |
 | :-------------: | :------------------------: |
 | weather-service | `http://host:port/weather` |
 
@@ -70,13 +70,13 @@ A anotação `@EnableDiscoveryClient` é usada para transformar o `WeatherServic
 
 ### Weather App
 
-| Module      | URL                                |
+| Módulo      | URL                                |
 | :---------: | :--------------------------------: |
 | weather-app | `http://host:port/current/weather` |
 
 ### Serviço de Data e Hora
 
-| Module           | URL                         |
+| Módulo           | URL                         |
 | :--------------: | :-------------------------: |
 | datetime-service | `http://host:port/datetime` |
 
@@ -84,13 +84,13 @@ A anotação `@EnableDiscoveryClient` é usada para transformar o `DatetimeServi
 
 ### Datetime App
 
-| Module       | URL                                 |
+| Módulo       | URL                                 |
 | :----------: | :---------------------------------: |
 | datetime-app | `http://host:port/current/datetime` |
 
 ### Cliente
 
-| Module  | URL                |
+| Módulo  | URL                |
 | :-----: | :----------------: |
 | client  | `http://host:port` |
 
@@ -111,7 +111,7 @@ Um efeito particularmente ruim em falhas de sistemas distribuídos é a [falha e
 Como aceitar falhas?
 
  * Tolerância ao erro
- * Degradação elegante (`Graceful degradation)
+ * Degradação elegante (`Graceful degradation`)
  * Restringir recursos
 
 > [Padrão de Projeto Circuit Breaker](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern) é um padrão de design usado no desenvolvimento de software moderno. É usado para detectar falhas e encapsula a lógica de evitar que uma falha se repita constantemente.
@@ -157,8 +157,8 @@ Antes do primeiro build será necessário executar os seguintes passos adicionai
  2. Definir variáveis de ambiente
  3. &#x1F4D7; _TODO_
 
-Você tem liberdade para escolher sua ferramenta de build: [Gradle](https://gradle.org/) or your favourite IDE.
-[IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/), [STS](https://stackoverflow.com/q/34214685/1429387) / [Eclipse](http://www.vogella.com/tutorials/EclipseGradle/article.html), or [NetBeans](https://netbeans.org/features/java/build-tools.html) should handle this task smoothly.
+Você tem liberdade para escolher sua ferramenta de build: [Gradle](https://gradle.org/) ou sua IDE favorita.
+[IntelliJ IDEA](https://spring.io/guides/gs/intellij-idea/), [STS](https://stackoverflow.com/q/34214685/1429387) / [Eclipse](http://www.vogella.com/tutorials/EclipseGradle/article.html), ou [NetBeans](https://netbeans.org/features/java/build-tools.html) devem lidar com essa tarefa sem problemas.
 
 ### Usando Gradle Wrapper
 
