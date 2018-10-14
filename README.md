@@ -8,6 +8,7 @@
 * [In English](readme-translations/README.en.md)
 * [Bahasa Indonesia](readme-translations/README.id.md)
 * [In het Nederlands](readme-translations/README.nl.md)
+* [Em Português](readme-translations/README.br.md)
 
 ## Вклад
 
